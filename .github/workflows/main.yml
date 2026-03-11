@@ -30,7 +30,7 @@ jobs:
        run: |
         newman run 'In-warranty-flow-Collections.postman_collection.json' \
           -e QA.postman_environment.json \
-          -r cli,htmlextra |
+          -r cli,htmlextra \
           -d testdata.csv
 
      - name: Upload report
