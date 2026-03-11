@@ -30,8 +30,10 @@ jobs:
        run: |
         newman run 'In-warranty-flow-Collections.postman_collection.json' \
           -e QA.postman_environment.json \
+          -d testdata.csv \
           -r cli,htmlextra \
-          -d testdata.csv
+          --reporter-htmlextra-export ./newman/index.html
+          
 
      - name: Newman report
        if: always() #It will execute this step whether previuos step is failed
